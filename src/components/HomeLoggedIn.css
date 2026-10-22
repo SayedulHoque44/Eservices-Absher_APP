@@ -1,0 +1,279 @@
+.home {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--home-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.home-scroll {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding-bottom: calc(var(--nav-h) + 24px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom)));
+}
+
+.home-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---------- Header ---------- */
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--header-bg);
+  padding: calc(14px + var(--safe-area-inset-top, env(safe-area-inset-top))) 20px 40px;
+}
+
+.home-logo {
+  height: 38px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.home-badge {
+  height: 36px;
+  width: 36px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.home-icons {
+  display: flex;
+  gap: 6px;
+  color: var(--header-icon);
+}
+
+.home-icons button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+}
+
+/* ---------- Body ---------- */
+.home-body {
+  padding: 0 16px;
+  margin-top: -26px;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 16px 18px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(16, 40, 28, 0.08);
+  text-align: left;
+}
+
+.user-photo {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  background: #eee;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-info strong {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.user-info span {
+  font-size: 14.5px;
+  color: #6a6a6a;
+}
+
+.service-search {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  height: 52px;
+  margin-top: 18px;
+  padding: 0 18px;
+  background: #fff;
+  border: 1px solid #e7ebe8;
+  border-radius: 13px;
+  color: #9b9b9b;
+  font-size: 16px;
+}
+
+.survey-card {
+  display: flex;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 18px;
+  background: var(--survey-bg);
+  border-radius: 16px;
+}
+
+.survey-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #c3e2d0;
+  color: var(--primary);
+}
+
+.survey-text {
+  flex: 1;
+}
+
+.survey-text strong {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.survey-text p {
+  margin: 6px 0 0;
+  font-size: 14.5px;
+  line-height: 1.4;
+  color: #4f5a54;
+}
+
+.survey-action {
+  display: block;
+  margin: 10px 0 0 auto;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ---------- Sections ---------- */
+.home-section {
+  margin-top: 26px;
+}
+
+.home-section-head,
+.quick-access h2 {
+  margin: 0;
+}
+
+.home-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.home-section-head h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  color: #141414;
+}
+
+.see-all-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+.document-card {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.document-card.id-card > img {
+  border-radius: 14px;
+}
+
+.quick-access {
+  margin-top: 26px;
+}
+
+.quick-access h2 {
+  padding: 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #141414;
+}
+
+.qa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.qa-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 150px;
+  padding: 18px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(16, 40, 28, 0.05);
+  text-align: left;
+}
+
+.qa-wide {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+  min-height: 0;
+}
+
+.qa-icon {
+  flex: none;
+  color: var(--service-icon);
+}
+
+.qa-card strong {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #171717;
+}
+
+.qa-card p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #6c6c6c;
+}
+
+.qa-wide .qa-text {
+  flex: 1;
+}
+
+/* ---------- Floating button ---------- */
+.home-fab {
+  position: absolute;
+  right: 18px;
+  bottom: calc(var(--nav-h) + 20px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom)));
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(10, 70, 45, 0.35);
+}
+

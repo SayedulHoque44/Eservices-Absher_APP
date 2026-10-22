@@ -1,0 +1,208 @@
+.otp {
+  --otp-accent: #1b9e87;
+  position: fixed;
+  inset: 0;
+  z-index: 76;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  background: var(--page-bg);
+  padding: calc(14px + var(--safe-area-inset-top, env(safe-area-inset-top))) 20px
+    calc(20px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom)));
+  transform: translateY(100%);
+  visibility: hidden;
+  transition:
+    transform 0.3s cubic-bezier(0.3, 0, 0.2, 1),
+    visibility 0s linear 0.3s;
+}
+
+.otp.is-open {
+  transform: none;
+  visibility: visible;
+  transition: transform 0.3s cubic-bezier(0.3, 0, 0.2, 1);
+}
+
+/* ---------- Notification ---------- */
+.otp-notif {
+  width: 100%;
+  border-radius: 18px;
+  padding: 12px 15px 15px;
+  background: linear-gradient(180deg, #eef7f9, #e1f2f2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.otp-notif-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: #3a3a3a;
+}
+
+.otp-notif-body {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.otp-notif-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.otp-notif-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.otp-notif-text strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: #141414;
+}
+
+.otp-notif-text > span {
+  font-size: 14.5px;
+  color: #2a2a2a;
+}
+
+.otp-copy {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 7px;
+  padding: 6px 12px;
+  background: #e8eded;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ---------- Heading ---------- */
+.otp-title {
+  margin: 22px 0 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #141414;
+}
+
+.otp-subtitle {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 15px;
+  color: #9a9a9a;
+}
+
+.otp-via {
+  margin: 8px 0 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.otp-via b {
+  font-weight: 700;
+}
+
+/* ---------- OTP boxes ---------- */
+.otp-boxes {
+  display: flex;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.otp-box {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  background: #fff;
+  border: 1.5px solid #e2e5e3;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #141414;
+}
+
+.otp-box.is-active {
+  border-color: var(--otp-accent);
+  box-shadow: 0 0 0 1px var(--otp-accent);
+}
+
+.otp-boxes.is-error .otp-box {
+  border-color: #e05454;
+  box-shadow: none;
+  animation: otp-shake 0.35s;
+}
+
+@keyframes otp-shake {
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.otp-caret {
+  width: 2px;
+  height: 26px;
+  background: var(--otp-accent);
+  animation: otp-blink 1s step-end infinite;
+}
+
+@keyframes otp-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------- Keypad ---------- */
+.otp-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 84px);
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.otp-key {
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: #e9eef0;
+  border-radius: 14px;
+  font-size: 23px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.otp-key:active {
+  background: #dde4e6;
+}
+
+/* ---------- Footer ---------- */
+.otp-footer {
+  margin-top: auto;
+  width: 100%;
+  padding-top: 30px;
+}
+
+.otp-auth-btn {
+  width: 100%;
+  height: 56px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 12px;
+}

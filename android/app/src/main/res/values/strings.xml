@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Absar</string>
+    <string name="title_activity_main">Absar</string>
+    <string name="package_name">com.absar.app</string>
+    <string name="custom_url_scheme">com.absar.app</string>
+</resources>

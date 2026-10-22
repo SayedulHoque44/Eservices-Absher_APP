@@ -1,0 +1,198 @@
+/* ---------- My Profile ---------- */
+.profile-body {
+  padding: 0 16px 24px;
+}
+
+.profile-photo {
+  display: block;
+  width: 104px;
+  height: 104px;
+  margin: -2px auto 0;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: top center;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  position: relative;
+  z-index: 1;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -56px;
+  padding: 66px 20px 22px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(16, 40, 28, 0.06);
+}
+
+.profile-name {
+  font-size: 19px;
+  font-weight: 700;
+  color: #141414;
+}
+
+.profile-id {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 5px;
+  font-size: 14.5px;
+  color: #8a8a8a;
+}
+
+.profile-id svg {
+  color: var(--primary);
+}
+
+.profile-personal {
+  margin-top: 16px;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.profile-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.profile-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 26px 10px 18px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(16, 40, 28, 0.05);
+  color: var(--primary);
+}
+
+.profile-tile span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.profile-list {
+  margin-top: 14px;
+  padding: 0 18px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(16, 40, 28, 0.05);
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 0;
+  text-align: left;
+  color: var(--primary);
+}
+
+.profile-row span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.profile-divider {
+  height: 1px;
+  background: #eef0ee;
+}
+
+.travel-banner {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(16, 40, 28, 0.08);
+}
+
+.travel-banner img {
+  display: block;
+  width: 100%;
+}
+
+/* ---------- Passport mini card ---------- */
+.mini-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 16px 16px 0;
+  padding: 16px 18px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(16, 40, 28, 0.05);
+}
+
+.mini-card strong {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.mini-card span {
+  font-size: 14.5px;
+  color: #8a8a8a;
+}
+
+.detail-placeholder {
+  margin: 0;
+  padding: 14px 0;
+  color: #b0b0b0;
+}
+
+/* ---------- Travel records list ---------- */
+.records-card {
+  margin: 16px;
+  padding: 4px 18px 8px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(16, 40, 28, 0.05);
+}
+
+.records-head {
+  margin: 16px 0 4px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #9a9a9a;
+}
+
+.record-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid #f0f2f0;
+}
+
+.record-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.record-text strong {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.record-text strong[lang='ar'] {
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+.record-text span {
+  font-size: 13.5px;
+  color: #9a9a9a;
+}

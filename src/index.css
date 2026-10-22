@@ -1,0 +1,103 @@
+/* Colour variables come from brand/brand.config.json (injected by vite.config.js). */
+:root {
+  --nav-h: 62px;
+
+  font-family: Arial, Arimo, Helvetica, sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--page-bg);
+  overscroll-behavior: none;
+}
+
+/* Smooth, GPU-composited page transitions and momentum scrolling. */
+.subpage,
+.docs,
+.svcpage,
+.acc,
+.login,
+.settings,
+.tab,
+.home,
+.preview {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.subpage-scroll,
+.docs-scroll,
+.acc-scroll,
+.home-scroll,
+.tab-scroll,
+.login {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Holographic "reflect" sweep for digital document cards. */
+.id-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.id-card > img {
+  display: block;
+  width: 100%;
+}
+
+.id-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 36%,
+    rgba(255, 255, 255, 0.55) 48%,
+    rgba(255, 255, 255, 0.15) 54%,
+    transparent 64%
+  );
+  transform: translateX(-130%);
+  animation: id-shine 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes id-shine {
+  0% {
+    transform: translateX(-130%);
+  }
+  55%,
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .id-card::after {
+    animation: none;
+  }
+}

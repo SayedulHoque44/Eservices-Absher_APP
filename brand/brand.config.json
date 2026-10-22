@@ -1,0 +1,547 @@
+{
+  "appName": "Absar",
+  "appId": "com.absar.app",
+  "version": "1.0.0",
+  "versionCode": 1,
+
+  "logo": "logo.svg",
+  "badge": "badge.png",
+
+  "icon": {
+    "background": "#ffffff",
+    "logoScale": 0.8
+  },
+  "splash": {
+    "background": "#eaf3ee",
+    "logoScale": 0.25
+  },
+
+  "colors": {
+    "primary": "#00603a",
+    "primaryText": "#1b6a43",
+    "headerIcon": "#1e5a3c",
+    "serviceIcon": "#1d6e48",
+    "nafath": "#13868b",
+    "text": "#161616",
+    "border": "#dde2df",
+    "headerBg": "#eaf3ee",
+    "headerPattern": "#d9e8df",
+    "pageBg": "#f6f8f7",
+    "settingsBg": "#f7f9f8",
+    "settingsLabel": "#636564",
+    "settingsBorder": "#eaecea",
+    "settingsDivider": "#efefef",
+    "settingsRadio": "#8a8a8a",
+    "loginBtn": "#8eb49a",
+    "fieldBorder": "#ebebeb",
+    "fieldLabel": "#656565",
+    "placeholder": "#a9a9a9",
+    "checkbox": "#dddddd",
+    "muted": "#979797",
+    "homeBg": "#eef3ef",
+    "surveyBg": "#d4eadd"
+  },
+
+  "text": {
+    "title": "Absher E-Services 24/7",
+    "login": "Log In",
+    "nafathArabic": "نفاذ",
+    "nafath": "Log In with Nafath",
+    "servicesTitle": "Public Services",
+    "seeAll": "See All",
+    "settings": {
+      "done": "Done",
+      "preferences": "Preferences",
+      "language": "Language",
+      "calendar": "Calendar",
+      "gregorian": "Gregorian",
+      "hijri": "Hijri"
+    },
+    "accountSettings": {
+      "title": "Settings",
+      "idLabel": "ID No.:",
+      "accountDetails": "ACCOUNT DETAILS",
+      "authenticator": "Absher Authenticator",
+      "privacySecurity": "PRIVACY AND SECURITY",
+      "trustedDevices": "Trusted Devices",
+      "useBiometrics": "Use Biometrics",
+      "useBiometricsDesc": "Biometrics are required to access your Digital Documents and Absher Authenticator while logged out, and allows you to stay logged in for longer.",
+      "blurImages": "Blur images",
+      "blurImagesDesc": "All images for woman will be blurred and not fully visible.",
+      "preferences": "PREFERENCES",
+      "language": "Language",
+      "calendar": "Calendar",
+      "calendarDesc": "Where possible, all dates will be displayed as Gregorian",
+      "gregorian": "Gregorian",
+      "hijri": "Hijri",
+      "deleteIdentity": "Delete Your Digital Identity",
+      "support": "SUPPORT",
+      "supportItems": [
+        "Support Center",
+        "App Services Guide",
+        "Accessibility Guide",
+        "Live Chat",
+        "FAQs",
+        "Privacy Policy"
+      ],
+      "logout": "Log Out",
+      "logoutTitle": "Log Out",
+      "logoutMessage": "Are you sure you want to log out?",
+      "cancel": "Cancel"
+    },
+    "loginPage": {
+      "loginTitle": "Log In to Absher",
+      "usernameLabel": "Username or ID Number",
+      "usernamePlaceholder": "Enter Username or ID Number",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter Password",
+      "keepLoggedIn": "Keep me logged in",
+      "loginButton": "Log In",
+      "forgotPassword": "Forgot Password"
+    },
+    "home": {
+      "idLabel": "ID No.:",
+      "searchPlaceholder": "Look for a Service",
+      "surveyTitle": "Take a Quick Survey",
+      "surveyBody": "Share your experience with Absher to help us improve.",
+      "surveyAction": "Start Survey",
+      "documentsTitle": "My Digital Documents",
+      "seeAll": "See All",
+      "quickAccessTitle": "Quick Access",
+      "nav": {
+        "home": "Home",
+        "services": "Services",
+        "family": "Family",
+        "workers": "Workers",
+        "other": "Other"
+      }
+    },
+    "documents": {
+      "title": "Digital Documents",
+      "lastUpdated": "Last updated:",
+      "pullToUpdate": "Pull to update.",
+      "residentId": "Resident ID"
+    },
+    "search": {
+      "title": "Search",
+      "results": "Showing 134 results",
+      "filterBy": "Filter by"
+    },
+    "assistant": {
+      "title": "Absher Assistant",
+      "subtitle": "Available 24/7",
+      "welcome": "Welcome MD 💚\nI am your Absher Smart Assistant, designed to streamline your requests and provide instant answers to your inquiries.\nAbsher is at your service.",
+      "inputPlaceholder": "Type your message...",
+      "presetsLabel": "Suggested",
+      "fallback": "Thank you for your message. I've noted your request — you can also explore the related service from the home screen, and an Absher representative will follow up if needed.",
+      "presets": [
+        {
+          "q": "How do I renew my passport?",
+          "a": "To renew your passport, open Services → Update Passport Information and follow the steps. You'll need a valid Resident ID and the renewal fee paid via Government Payments."
+        },
+        {
+          "q": "Check my travel records",
+          "a": "You can view your travel records from Profile → My Travel Records. Your latest trip was to بنجلاديش on 27/10/2025, and your full history is listed there."
+        },
+        {
+          "q": "How to report a minor accident?",
+          "a": "Open Report Minor Accident from Quick Access, tap the 'Report Minor Accident' button, then add the accident details and location to submit your report."
+        },
+        {
+          "q": "When does my Resident ID expire?",
+          "a": "Your Resident ID (2628444925) is valid until 16/06/2027. You can renew it any time from Services → Renew Resident ID."
+        },
+        {
+          "q": "What is Nafath?",
+          "a": "Nafath is the national single sign-on service. You can use it to log in and verify your identity securely with your national or resident ID."
+        }
+      ]
+    },
+    "tabs": {
+      "servicesTitle": "My Services",
+      "searchByService": "Search by Service...",
+      "familyTitle": "Family",
+      "workersTitle": "Workers",
+      "otherTitle": "Other Services",
+      "searchByName": "Search by name, ID",
+      "searchByServiceShort": "Search by Service",
+      "noFamilyTitle": "No Family Members",
+      "noFamilyBody": "Once you have family members, they will display here.",
+      "noWorkersTitle": "No Workers",
+      "noWorkersBody": "Once you have workers under your sponsorship they will display here.",
+      "preferredServices": "Preferred Services",
+      "personaliseSpace": "Personalise Space"
+    },
+    "profile": {
+      "title": "My Profile",
+      "personalDetails": "My Personal Details",
+      "passport": "My Passport",
+      "residentId": "My Resident ID",
+      "visa": "My Visa",
+      "drivingLicense": "My Driving License",
+      "travelRecords": "My Travel Records",
+      "travelRecordsSub": "Find your last trips details",
+      "insideKingdom": "Inside Kingdom",
+      "labor": "Labor Importations"
+    }
+  },
+
+  "user": {
+    "name": "MD MERAJ UDDIN",
+    "id": "2628444925",
+    "photo": "profile.png",
+    "personal": {
+    "sections": [
+        {
+          "title": "Personal Details",
+          "icon": "photo",
+          "rows": [
+            { "label": "Name", "value": "MD MERAJ UDDIN" },
+            { "label": "Nationality", "value": "Bangladesh" },
+            { "label": "Birth City", "value": "-" },
+            { "label": "Birth Country/Region", "value": "Bangladesh" },
+            { "label": "Date of Birth", "value": "01/09/1995" },
+            { "label": "Marital Status", "value": "SINGLE" },
+            { "label": "No. of sponsorship transfers", "value": "0" },
+            { "label": "Religion", "value": "Islam" },
+            { "label": "Work Permit", "value": "-" },
+            { "label": "Biometrics Collected", "value": "Yes" },
+            { "label": "Travel Status", "value": "Inside" }
+          ]
+        },
+        {
+          "title": "Sponsor Details",
+          "icon": "person",
+          "rows": [
+            { "label": "Sponsor Name", "value": "شركة عيسى شويمي العتيبي", "lang": "ar" },
+            { "label": "Sponsor ID Number", "value": "7053420845", "copy": true }
+          ]
+        },
+        {
+          "title": "Health Insurance",
+          "icon": "crescent",
+          "rows": [
+            { "label": "Issuing Date", "value": "27/04/2026" },
+            { "label": "Expiry Date", "value": "26/04/2027" },
+            { "label": "Blood Type", "value": "-" }
+          ]
+        },
+        {
+          "title": "Hajj Details",
+          "icon": "hajj",
+          "rows": [
+            { "label": "Hajj Status", "value": "Eligible for Hajj", "badge": true },
+            { "label": "Last Hajj Year", "value": "-" }
+          ]
+        }
+      ]
+    },
+    "passport": {
+      "amountDepositLabel": "Amount deposit",
+      "amountDeposit": "SAR 0.00",
+      "sectionTitle": "Normal Passport",
+      "rows": [
+        { "label": "Passport Number", "value": "A14942800", "copy": true },
+        { "label": "Type", "value": "Normal" },
+        { "label": "Issuing Date", "value": "03/07/2024" },
+        { "label": "Expiry Date", "value": "02/07/2034" },
+        { "label": "Issuing City", "value": "دكا", "lang": "ar" },
+        { "label": "Status", "value": "اصلي", "lang": "ar" }
+      ]
+    },
+    "residentId": {
+      "cardTitle": "My Resident ID",
+      "rows": [
+        { "label": "Resident ID Number", "value": "2628444925", "copy": true },
+        { "label": "ID Version", "value": "1" },
+        { "label": "Issuing Date", "value": "26/07/2018" },
+        { "label": "Expiry Date", "value": "16/06/2027" }
+      ]
+    },
+    "visa": {
+      "emptyTitle": "No Visa",
+      "emptyBody": "Once you have a Visa, the details will display here."
+    },
+    "drivingLicense": {
+      "emptyTitle": "No Driving License",
+      "emptyBody": "Once you have a Driving License, the details will display here."
+    },
+    "labor": {
+      "emptyTitle": "No Labor Importations",
+      "emptyBody": "Once you have Labor Importations, the details will display here."
+    },
+    "travel": {
+      "cardTitle": "My Travel Records",
+      "statusLabel": "Travel Status",
+      "status": "Inside Kingdom",
+      "lastDestLabel": "Last Travel Destination",
+      "lastDest": "بنجلاديش",
+      "lastDateLabel": "Last Travel Date",
+      "lastDate": "27/10/2025",
+      "allRecordsLabel": "ALL RECORDS",
+      "records": [
+        { "flag": "bd", "country": "بنجلاديش", "date": "27/10/2025" },
+        { "flag": "ae", "country": "الامارات العربية", "date": "04/06/2024" }
+      ]
+    }
+  },
+
+  "servicesList": [
+    { "title": "Absher Travel", "icon": "map", "action": "travelRequests" },
+    { "title": "Register Newborn", "icon": "newborn", "action": "registerNewborn" },
+    { "title": "Renew Driving License", "icon": "idcard", "action": "renewDrivingLicense" },
+    { "title": "Renew Resident ID", "icon": "idcard", "action": "renewResidentId" },
+    { "title": "Authentication Services", "icon": "fingerprint", "action": "authRequests" },
+    { "title": "Update Resident Photo", "icon": "photo-id", "action": "photoRequests" },
+    { "title": "Report Minor Accident", "icon": "car-report", "action": "reportAccident" },
+    { "title": "Update Passport Information", "icon": "passport", "action": "updatePassport" }
+  ],
+
+  "otherPreferred": [
+    { "title": "Manage Appointments", "icon": "person", "action": "manageAppointments" },
+    { "title": "Document Delivery", "icon": "package", "action": "documentDelivery" }
+  ],
+
+  "otherServices": [
+    { "title": "Absher Travel", "icon": "map", "action": "travelRequests" },
+    { "title": "Manage Authorizations", "icon": "auth", "action": "manageAuthorizations" },
+    { "title": "Donate with Sadaqah", "icon": "donate", "action": "donateSadaqah" },
+    { "title": "Donate with Ehsan", "icon": "donate", "action": "donateEhsan" },
+    { "title": "Manage Visit Visa", "icon": "visa", "action": "manageVisitVisa" },
+    { "title": "Absher Activation Sites", "icon": "qr", "action": "activationSites" },
+    { "title": "Manage Qabul Requests", "icon": "doc-check", "action": "manageQabul" },
+    { "title": "Birth Certificates Services", "icon": "passport", "badge": true, "action": "birthCertificates" },
+    { "title": "Death Certificates Services", "icon": "passport", "badge": true, "action": "deathCertificates" },
+    { "title": "Government Payments", "icon": "person", "action": "governmentPayments" },
+    { "title": "Resident ID Requests", "icon": "idcard", "action": "residentIdRequests" },
+    { "title": "Border Number Inquiry", "icon": "person", "action": "borderNumberInquiry" }
+  ],
+
+  "servicePages": {
+    "reportAccident": {
+      "title": "Report Minor Accident",
+      "icon": "car-report",
+      "tabs": ["Received", "Sent"],
+      "emptyTitle": "No Accident Reports",
+      "emptyBody": "Once you have accident reports they will display here.",
+      "button": "Report Minor Accident"
+    },
+    "authRequests": {
+      "title": "Authentication Requests",
+      "icon": "fingerprint",
+      "close": true,
+      "emptyTitle": "No Pending Requests",
+      "emptyBody": "There are currently no pending verification requests"
+    },
+    "travelRequests": {
+      "title": "Travel Requests",
+      "icon": "map",
+      "emptyTitle": "No Travel Requests",
+      "emptyBody": "Once you create or join a travel request for crossing Gulf country borders they will display here.",
+      "button": "Create Travel Request"
+    },
+    "photoRequests": {
+      "title": "Requests",
+      "icon": "photo-id",
+      "emptyTitle": "No Requests",
+      "emptyBody": "Once you have change photo requests they will display here.",
+      "button": "Update Resident Photo"
+    },
+    "myVehicles": {
+      "title": "My Vehicles",
+      "icon": "car",
+      "emptyTitle": "No Vehicles",
+      "emptyBody": "Once you have vehicles registered they will display here."
+    },
+    "myWeapons": {
+      "title": "My Weapons",
+      "icon": "weapon",
+      "emptyTitle": "No Weapons",
+      "emptyBody": "Once you have weapons registered they will display here."
+    },
+    "registerNewborn": {
+      "title": "Register Newborn",
+      "icon": "newborn",
+      "emptyTitle": "No Newborn Registrations",
+      "emptyBody": "Once you register a newborn it will display here.",
+      "button": "Register Newborn"
+    },
+    "renewDrivingLicense": {
+      "title": "Renew Driving License",
+      "icon": "idcard",
+      "emptyTitle": "No Driving License",
+      "emptyBody": "Once you have a driving license it will display here.",
+      "button": "Renew Driving License"
+    },
+    "renewResidentId": {
+      "title": "Renew Resident ID",
+      "icon": "idcard",
+      "emptyTitle": "No Resident ID",
+      "emptyBody": "Once you have a resident ID it will display here.",
+      "button": "Renew Resident ID"
+    },
+    "updatePassport": {
+      "title": "Update Passport Information",
+      "icon": "passport",
+      "emptyTitle": "No Passport",
+      "emptyBody": "Once you have a passport it will display here.",
+      "button": "Update Passport Information"
+    },
+    "manageAppointments": {
+      "title": "Manage Appointments",
+      "icon": "person",
+      "tabs": ["Upcoming", "Past"],
+      "emptyTitle": "No Appointments",
+      "emptyBody": "Once you book an appointment it will display here.",
+      "button": "Book Appointment"
+    },
+    "documentDelivery": {
+      "title": "Document Delivery",
+      "icon": "package",
+      "emptyTitle": "No Deliveries",
+      "emptyBody": "Once you request a document delivery it will display here.",
+      "button": "Request Delivery"
+    },
+    "manageAuthorizations": {
+      "title": "Manage Authorizations",
+      "icon": "auth",
+      "tabs": ["Issued", "Received"],
+      "emptyTitle": "No Authorizations",
+      "emptyBody": "Once you have authorizations they will display here.",
+      "button": "Add Authorization"
+    },
+    "donateSadaqah": {
+      "title": "Donate with Sadaqah",
+      "icon": "donate",
+      "emptyTitle": "No Donations",
+      "emptyBody": "Your donations will display here.",
+      "button": "Donate Now"
+    },
+    "donateEhsan": {
+      "title": "Donate with Ehsan",
+      "icon": "donate",
+      "emptyTitle": "No Donations",
+      "emptyBody": "Your donations will display here.",
+      "button": "Donate Now"
+    },
+    "manageVisitVisa": {
+      "title": "Manage Visit Visa",
+      "icon": "visa",
+      "emptyTitle": "No Visit Visas",
+      "emptyBody": "Once you have visit visas they will display here.",
+      "button": "Apply for Visit Visa"
+    },
+    "activationSites": {
+      "title": "Absher Activation Sites",
+      "icon": "qr",
+      "emptyTitle": "No Activation Sites",
+      "emptyBody": "Nearby activation sites will display here."
+    },
+    "manageQabul": {
+      "title": "Manage Qabul Requests",
+      "icon": "doc-check",
+      "emptyTitle": "No Qabul Requests",
+      "emptyBody": "Once you have Qabul requests they will display here.",
+      "button": "New Request"
+    },
+    "birthCertificates": {
+      "title": "Birth Certificates Services",
+      "icon": "passport",
+      "emptyTitle": "No Birth Certificates",
+      "emptyBody": "Once you have birth certificate requests they will display here.",
+      "button": "Request Birth Certificate"
+    },
+    "deathCertificates": {
+      "title": "Death Certificates Services",
+      "icon": "passport",
+      "emptyTitle": "No Death Certificates",
+      "emptyBody": "Once you have death certificate requests they will display here.",
+      "button": "Request Death Certificate"
+    },
+    "governmentPayments": {
+      "title": "Government Payments",
+      "icon": "person",
+      "emptyTitle": "No Payments",
+      "emptyBody": "Your government payments will display here."
+    },
+    "residentIdRequests": {
+      "title": "Resident ID Requests",
+      "icon": "idcard",
+      "emptyTitle": "No Requests",
+      "emptyBody": "Once you have resident ID requests they will display here.",
+      "button": "New Request"
+    },
+    "borderNumberInquiry": {
+      "title": "Border Number Inquiry",
+      "icon": "person",
+      "emptyTitle": "No Border Number",
+      "emptyBody": "Your border number details will display here."
+    }
+  },
+
+  "searchResults": [
+    { "title": "Update Residence Passport Information", "category": "Passports" },
+    { "title": "Saudi Passport Renewal For Family Member", "category": "Passports" },
+    { "title": "Query Border Number", "category": "Passports" },
+    { "title": "Query Hajj Eligibility", "category": "Passports" },
+    { "title": "Request Replacement For Damaged Id", "category": "Civil Affairs" },
+    { "title": "E-Authorization", "category": "Civil Affairs" },
+    { "title": "Register Newborn Service", "category": "Civil Affairs" },
+    { "title": "Exit/Re-Entry Visa Status", "category": "Passports" },
+    { "title": "Driving License Information", "category": "Public Security" },
+    { "title": "Vehicle Ownership Transfer", "category": "Public Security" },
+    { "title": "Query Nin Expiry", "category": "Civil Affairs" },
+    { "title": "Request Replacement For Lost Id", "category": "Civil Affairs" },
+    { "title": "View Digital Id", "category": "Civil Affairs" },
+    { "title": "Request Replacement For Lost Family Register", "category": "Civil Affairs" },
+    { "title": "Issuing The Saudi Passport", "category": "Passports" },
+    { "title": "Renew Vehicle Registration", "category": "Public Security" },
+    { "title": "Renew Air Gun License", "category": "Public Security" },
+    { "title": "Government Payment", "category": "General Services" },
+    { "title": "Update Family Register", "category": "Civil Affairs" },
+    { "title": "Report Minor Accident", "category": "Public Security" },
+    { "title": "View Vehicle Registration", "category": "Public Security" },
+    { "title": "Issue Vehicle Repair Permit", "category": "Public Security" },
+    { "title": "Cancellation Of Final Exit Visa", "category": "Passports" },
+    { "title": "Issuance Of Final Exit Visa", "category": "Passports" },
+    { "title": "Accident Objection/Waiver", "category": "Public Security" },
+    { "title": "Parents' Requirements Regarding Obtaining Their Consent", "category": "Passports" },
+    { "title": "Renew Driving License", "category": "Public Security" },
+    { "title": "View Death Certificate", "category": "Civil Affairs" },
+    { "title": "Renewing The Saudi Passport", "category": "Passports" },
+    { "title": "Display Employees", "category": "Passports" },
+    { "title": "Taqdeer For Others", "category": "General Services" }
+  ],
+
+  "quickAccess": [
+    {
+      "title": "My Vehicles",
+      "desc": "View details, renew documents, report accidents, and much more.",
+      "icon": "car",
+      "wide": true,
+      "action": "myVehicles"
+    },
+    { "title": "Authentication Services", "icon": "fingerprint", "action": "authRequests" },
+    { "title": "Absher Travel", "icon": "map", "action": "travelRequests" },
+    { "title": "Report Minor Accident", "icon": "car-report", "action": "reportAccident" },
+    { "title": "Update Resident Photo", "icon": "photo-id", "action": "photoRequests" },
+    {
+      "title": "My Weapons",
+      "desc": "View weapons details, issue and renew carry permits",
+      "icon": "weapon",
+      "wide": true,
+      "action": "myWeapons"
+    }
+  ],
+
+  "services": [
+    { "title": "Manage Digital Identity", "icon": "person" },
+    { "title": "Authentication Services", "icon": "fingerprint" },
+    { "title": "Absher Travel for Visitors", "icon": "map" },
+    { "title": "View Digital Documents", "icon": "qr" },
+    { "title": "Civil Affairs Appointment", "icon": "person" },
+    { "title": "Visitor Digital Document", "icon": "map" },
+    { "title": "Passport Appointments", "icon": "person" },
+    { "title": "Absher Activation Sites", "icon": "qr" }
+  ]
+}

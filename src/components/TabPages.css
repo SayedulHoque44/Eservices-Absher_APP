@@ -1,0 +1,160 @@
+.tab {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--page-bg);
+}
+
+.tab-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px calc(var(--nav-h) + 20px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom)));
+  scrollbar-width: none;
+}
+
+.tab-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(14px + var(--safe-area-inset-top, env(safe-area-inset-top))) 4px 10px;
+}
+
+.tab-head h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #141414;
+}
+
+.tab-head-icons {
+  display: flex;
+  gap: 10px;
+  color: var(--header-icon);
+}
+
+.tab-search {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  height: 50px;
+  margin: 8px 0 18px;
+  padding: 0 18px;
+  background: #ececec;
+  border-radius: 999px;
+  color: #8f8f8f;
+  font-size: 16px;
+}
+
+/* ---------- Service grid ---------- */
+.svc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.svc-grid-pad {
+  margin-top: 14px;
+}
+
+.svc-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 150px;
+  padding: 20px 16px 18px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(16, 40, 28, 0.05);
+  text-align: left;
+}
+
+.svc-icon {
+  flex: none;
+  color: var(--service-icon);
+}
+
+.svc-card h3 {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #171717;
+}
+
+.svc-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: #eef1ef;
+  color: #7a7a7a;
+}
+
+/* ---------- Other: preferred section ---------- */
+.other-preferred {
+  margin: 0 -16px;
+  padding: 6px 16px 22px;
+  background: var(--header-bg);
+}
+
+.other-preferred h2 {
+  margin: 4px 0 14px;
+  font-size: 19px;
+  font-weight: 700;
+  color: #141414;
+}
+
+.personalise {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 22px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ---------- Empty tab ---------- */
+.tab-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px;
+  margin-top: 38vh;
+  transform: translateY(-50%);
+}
+
+.tab-empty-icon {
+  color: #bdbdbd;
+}
+
+.tab-empty strong {
+  margin-top: 20px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.tab-empty p {
+  margin: 10px 0 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #8a8a8a;
+}

@@ -1,0 +1,188 @@
+﻿.screen {
+  min-height: 100dvh;
+  background: var(--page-bg);
+  padding-bottom: calc(24px + var(--safe-area-inset-bottom, env(safe-area-inset-bottom)));
+}
+
+/* ---------- Header panel ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--header-bg);
+  border-radius: 0 0 36px 36px;
+  box-shadow: 0 1px 0 var(--header-pattern), 2px 2px 6px rgba(0, 0, 0, 0.04);
+  padding: calc(20px + var(--safe-area-inset-top, env(safe-area-inset-top))) 27px 34px;
+}
+
+.hero-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 130px;
+  color: var(--header-pattern);
+  pointer-events: none;
+}
+
+.top-actions {
+  position: relative;
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+  width: max-content;
+  margin-right: -3px;
+  padding: 4px 10px;
+  background: #fff;
+  border-radius: 999px;
+}
+
+.top-actions button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 40px;
+  color: var(--header-icon);
+}
+
+.brand {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.brand-logo {
+  height: 70px;
+  width: auto;
+}
+
+.brand-badge {
+  width: 74px;
+  height: 72px;
+}
+
+.title {
+  position: relative;
+  margin: 31px 0 26px;
+  text-align: center;
+  font-size: 23.5px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.1px;
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.btn-primary {
+  height: 58px;
+  gap: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* Brand logo tinted with the button text colour. */
+.btn-logo {
+  width: 16px;
+  height: 19px;
+  background: currentColor;
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
+}
+
+.btn-outline {
+  height: 54px;
+  margin-top: 34px;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.nafath {
+  font-family: 'Noto Sans Arabic', 'Segoe UI', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--nafath);
+  line-height: 1;
+}
+
+.nafath-text {
+  font-size: 17.5px;
+  color: #222;
+}
+
+/* ---------- Public services ---------- */
+.services {
+  padding-top: 46px;
+}
+
+.services-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 34px 0 50px;
+}
+
+.services-head h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.see-all {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-rows: repeat(2, 167px);
+  grid-auto-flow: column;
+  grid-auto-columns: 160px;
+  gap: 14px;
+  margin-top: 36px;
+  padding: 4px 24px 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.services-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 22px 18px 17px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 1px 4px rgba(16, 40, 28, 0.06);
+  scroll-snap-align: start;
+  scroll-margin-left: 24px;
+}
+
+.card-icon {
+  flex: none;
+  color: var(--service-icon);
+}
+
+.card h3 {
+  margin: 26px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}

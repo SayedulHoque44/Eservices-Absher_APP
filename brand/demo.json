@@ -1,0 +1,66 @@
+{
+    "user": {
+    "name": "MD MERAJ UDDIN",
+    "id": "2628444925",
+    "pin": "1234",
+    "photo": "profile.png",
+    "absher_card":"card.png",
+    "personal": {
+    "sections": [
+        {
+          "title": "Personal Details",
+          "rows": [
+            { "label": "Name", "value": "MD MERAJ UDDIN" },
+            { "label": "Nationality", "value": "Bangladesh" },
+            { "label": "Birth City", "value": "-" },
+            { "label": "Birth Country/Region", "value": "Bangladesh" },
+            { "label": "Date of Birth", "value": "01/09/1995" },
+            { "label": "Marital Status", "value": "SINGLE" },
+            { "label": "No. of sponsorship transfers", "value": "0" },
+            { "label": "Religion", "value": "Islam" },
+            { "label": "Work Permit", "value": "-" },
+            { "label": "Biometrics Collected", "value": "Yes" },
+            { "label": "Travel Status", "value": "Inside" }
+          ]
+        },
+        {
+          "title": "Sponsor Details",
+          "rows": [
+            { "label": "Sponsor Name", "value": "شركة عيسى شويمي العتيبي", "lang": "ar" },
+            { "label": "Sponsor ID Number", "value": "7053420845", "copy": true }
+          ]
+        },
+        {
+          "title": "Health Insurance",
+          "rows": [
+            { "label": "Issuing Date", "value": "27/04/2026" },
+            { "label": "Expiry Date", "value": "26/04/2027" },
+            { "label": "Blood Type", "value": "-" }
+          ]
+        }
+      ]
+    },
+    "passport": {
+      "amountDepositLabel": "Amount deposit",
+      "amountDeposit": "SAR 0.00",
+      "sectionTitle": "Normal Passport",
+      "rows": [
+        { "label": "Passport Number", "value": "A14942800", "copy": true },
+        { "label": "Type", "value": "Normal" },
+        { "label": "Issuing Date", "value": "03/07/2024" },
+        { "label": "Expiry Date", "value": "02/07/2034" },
+        { "label": "Issuing City", "value": "دكا", "lang": "ar" },
+        { "label": "Status", "value": "اصلي", "lang": "ar" }
+      ]
+    },
+    "residentId": {
+      "cardTitle": "My Resident ID",
+      "rows": [
+        { "label": "Resident ID Number", "value": "2628444925", "copy": true },
+        { "label": "ID Version", "value": "1" },
+        { "label": "Issuing Date", "value": "26/07/2018" },
+        { "label": "Expiry Date", "value": "16/06/2027" }
+      ]
+    }
+}
+}
