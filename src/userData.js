@@ -1,12 +1,24 @@
-import brand from '../brand/brand.config.json'
-
-// All of the user's data lives in brand.config.json under "user".
-// The photo is referenced there by filename and resolved from src/assets here.
+// Resolves a user photo (a bundled asset filename like "profile.png", or a full
+// URL / data URI from the API) to a usable <img src>. Falls back to the
+// bundled profile.png when nothing matches.
 const images = import.meta.glob('./assets/*.{png,jpg,jpeg,webp}', {
   eager: true,
   query: '?url',
   import: 'default',
 })
 
-export const user = brand.user
-export const userPhoto = images[`./assets/${brand.user.photo}`] ?? images['./assets/profile.png']
+const fallback = images['./assets/profile.png']
+const cardFallback = images['./assets/document-card.png']
+
+export function resolvePhoto(photo) {
+  if (!photo) return fallback
+  if (/^(https?:|data:|blob:)/i.test(photo)) return photo
+  return images[`./assets/${photo}`] ?? fallback
+}
+
+// Resolves the digital-document card image (absher_card) the same way.
+export function resolveCard(card) {
+  if (!card) return cardFallback
+  if (/^(https?:|data:|blob:)/i.test(card)) return card
+  return images[`./assets/${card}`] ?? cardFallback
+}

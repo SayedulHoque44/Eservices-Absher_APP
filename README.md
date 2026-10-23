@@ -16,11 +16,12 @@ The React Compiler is not enabled on this template because of its impact on dev 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
 
 ## TODO
-- continue (fopr copy popup)
-- in homepage card preview should more bigger and their scroll 2nd card show stattic Qr code,
 - website design and connect data of (my personal details) -- Check demo.json
-
+- add official logo
+- always refeatch on when reopen the app, 
+- if server response with error with that api it should logout and redirect to login page 
 
 ## before build
 - app name to Absher
 - add official logo (replce)
+- adb install -r android\app\build\outputs\apk\debug\app-debug.apk

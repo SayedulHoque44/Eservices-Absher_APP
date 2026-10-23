@@ -1,10 +1,10 @@
 {
-  "appName": "Absar",
-  "appId": "com.absar.app",
+  "appName": "Absher",
+  "appId": "com.absher.app",
   "version": "1.0.0",
   "versionCode": 1,
 
-  "logo": "logo.svg",
+  "logo": "logo.png",
   "badge": "badge.png",
 
   "icon": {
@@ -97,6 +97,7 @@
       "passwordPlaceholder": "Enter Password",
       "keepLoggedIn": "Keep me logged in",
       "loginButton": "Log In",
+      "loggingIn": "Logging in…",
       "forgotPassword": "Forgot Password"
     },
     "home": {
@@ -130,7 +131,7 @@
     "assistant": {
       "title": "Absher Assistant",
       "subtitle": "Available 24/7",
-      "welcome": "Welcome MD 💚\nI am your Absher Smart Assistant, designed to streamline your requests and provide instant answers to your inquiries.\nAbsher is at your service.",
+      "welcome": "Welcome {name} 💚\nI am your Absher Smart Assistant, designed to streamline your requests and provide instant answers to your inquiries.\nAbsher is at your service.",
       "inputPlaceholder": "Type your message...",
       "presetsLabel": "Suggested",
       "fallback": "Thank you for your message. I've noted your request — you can also explore the related service from the home screen, and an Absher representative will follow up if needed.",
@@ -141,7 +142,7 @@
         },
         {
           "q": "Check my travel records",
-          "a": "You can view your travel records from Profile → My Travel Records. Your latest trip was to بنجلاديش on 27/10/2025, and your full history is listed there."
+          "a": "You can view your travel records any time from Profile → My Travel Records, where your trips and travel status are listed."
         },
         {
           "q": "How to report a minor accident?",
@@ -149,7 +150,7 @@
         },
         {
           "q": "When does my Resident ID expire?",
-          "a": "Your Resident ID (2628444925) is valid until 16/06/2027. You can renew it any time from Services → Renew Resident ID."
+          "a": "You can view your Resident ID and its expiry date from Profile → My Resident ID, and renew it any time from Services → Renew Resident ID."
         },
         {
           "q": "What is Nafath?",
@@ -183,6 +184,28 @@
       "travelRecordsSub": "Find your last trips details",
       "insideKingdom": "Inside Kingdom",
       "labor": "Labor Importations"
+    },
+    "otp": {
+      "notifApp": "Absher",
+      "notifTime": "now",
+      "notifSender": "Absher",
+      "notifCodeLabel": "Verification code:",
+      "title": "Your Verification",
+      "subtitle": "Please enter the code received on your mobile",
+      "mask": "******",
+      "viaSms": "via SMS",
+      "button": "Use Absher Authenticator"
+    },
+    "nafathPage": {
+      "verifyText": "Verify your identity through Nafath app",
+      "timer": "01:59",
+      "logo": "نفاذ",
+      "welcome": "Welcome to the National Single Sign-On",
+      "appBar": "Login",
+      "idLabel": "National ID / Iqama Number",
+      "idPlaceholder": "Enter your ID number",
+      "login": "Login",
+      "download": "Download Nafath app from"
     }
   },
 
@@ -271,18 +294,8 @@
       "emptyBody": "Once you have Labor Importations, the details will display here."
     },
     "travel": {
-      "cardTitle": "My Travel Records",
-      "statusLabel": "Travel Status",
-      "status": "Inside Kingdom",
-      "lastDestLabel": "Last Travel Destination",
-      "lastDest": "بنجلاديش",
-      "lastDateLabel": "Last Travel Date",
-      "lastDate": "27/10/2025",
-      "allRecordsLabel": "ALL RECORDS",
-      "records": [
-        { "flag": "bd", "country": "بنجلاديش", "date": "27/10/2025" },
-        { "flag": "ae", "country": "الامارات العربية", "date": "04/06/2024" }
-      ]
+      "emptyTitle": "No Travel Records",
+      "emptyBody": "Once you have Travel Records, the details will display here."
     }
   },
 

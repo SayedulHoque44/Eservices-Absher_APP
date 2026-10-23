@@ -1,18 +1,33 @@
 import { useState } from 'react'
 import './LoginPage.css'
 import { ArrowLeftIcon } from './Icons.jsx'
+import { login } from '../api.js'
 
-// Static login screen. The inputs are local-only React state for a realistic
-// mockup — nothing is stored, logged, submitted, or sent anywhere, and the
-// Log In / Forgot Password buttons perform no action.
-export default function LoginPage({ open, text, logo, badge, onBack, onSubmit }) {
+// Login screen. Submits the ID + PIN to the server; on success it hands the
+// returned user up via onSuccess (which then opens OTP verification). Server
+// error messages (wrong ID/PIN, etc.) are shown inline.
+export default function LoginPage({ open, text, logo, badge, onBack, onSuccess }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [keep, setKeep] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  // Button becomes active once both fields are filled. It still performs no
-  // real login — this only enables and styles the button.
-  const canSubmit = username.trim() !== '' && password.trim() !== ''
+  const canSubmit = username.trim() !== '' && password.trim() !== '' && !loading
+
+  const submit = async () => {
+    if (!canSubmit) return
+    setError('')
+    setLoading(true)
+    try {
+      const user = await login(username.trim(), password.trim())
+      onSuccess(user)
+    } catch (e) {
+      setError(e.message || 'Login failed. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div className={`login${open ? ' is-open' : ''}`} aria-hidden={!open} inert={!open}>
@@ -35,10 +50,14 @@ export default function LoginPage({ open, text, logo, badge, onBack, onSubmit })
           <input
             id="login-username"
             type="text"
+            inputMode="numeric"
             autoComplete="off"
             placeholder={text.usernamePlaceholder}
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => {
+              setUsername(e.target.value)
+              setError('')
+            }}
           />
         </div>
 
@@ -50,9 +69,14 @@ export default function LoginPage({ open, text, logo, badge, onBack, onSubmit })
             autoComplete="off"
             placeholder={text.passwordPlaceholder}
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value)
+              setError('')
+            }}
           />
         </div>
+
+        {error && <p className="login-error">{error}</p>}
 
         <label className="login-check">
           <input type="checkbox" checked={keep} onChange={(e) => setKeep(e.target.checked)} />
@@ -62,13 +86,8 @@ export default function LoginPage({ open, text, logo, badge, onBack, onSubmit })
       </div>
 
       <div className="login-actions">
-        <button
-          type="button"
-          className="login-submit"
-          disabled={!canSubmit}
-          onClick={() => canSubmit && onSubmit()}
-        >
-          {text.loginButton}
+        <button type="button" className="login-submit" disabled={!canSubmit} onClick={submit}>
+          {loading ? text.loggingIn ?? 'Logging in…' : text.loginButton}
         </button>
         <button type="button" className="login-forgot">
           {text.forgotPassword}

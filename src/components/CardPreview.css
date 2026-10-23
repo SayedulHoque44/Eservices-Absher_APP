@@ -2,11 +2,8 @@
   position: fixed;
   inset: 0;
   z-index: 80;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(0, 0, 0, 0.78);
+  overflow: hidden;
+  background: rgba(32, 32, 32, 0.96);
   opacity: 0;
   visibility: hidden;
   transition:
@@ -20,20 +17,127 @@
   transition: opacity 0.22s ease;
 }
 
-/* The card fills the width and rotates to use the screen height, like a held ID. */
-.preview-card {
-  width: 92vh;
-  max-width: 150vw;
-  border-radius: 18px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  transform: rotate(90deg) scale(0.9);
-  transition: transform 0.28s cubic-bezier(0.2, 0, 0.2, 1);
+.preview-close {
+  position: absolute;
+  top: calc(14px + var(--safe-area-inset-top, env(safe-area-inset-top)));
+  right: 18px;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: #fff;
 }
 
-.preview-card > img {
-  border-radius: 18px;
+/* Vertical pager: each slide is one full screen, swipe up/down to switch. */
+.preview-track {
+  height: 100%;
+  transition: transform 0.35s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
-.preview.is-open .preview-card {
-  transform: rotate(90deg) scale(1);
+.preview-slide {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Both cards share the same tall portrait size + rounded corners. */
+.doc-card,
+.qr-card {
+  position: relative;
+  width: 82%;
+  max-width: 320px;
+  aspect-ratio: 326 / 525;
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.45);
+}
+
+/* Document card: the landscape ID rotated to fill the portrait frame. */
+.doc-card {
+  overflow: hidden;
+}
+
+.doc-card > .doc-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 165%;
+  max-width: none;
+  height: auto;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* ---------- QR card ---------- */
+/* QR centred with generous white space, timer lower-left. */
+
+/* Left column groups the vertical label with the timer right beneath it. */
+.qr-leftcol {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.qr-sidetext {
+  writing-mode: vertical-rl;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a8f92;
+  letter-spacing: 0.2px;
+}
+
+.qr-box {
+  position: absolute;
+  top: 28%;
+  left: 20%;
+  width: 72%;
+  aspect-ratio: 1;
+  padding: 18px;
+  border: 1px solid #e9ebed;
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.qr-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* White square shrink-wraps the logo + padding, so the logo can never
+   extend past the white box. */
+.qr-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 7px;
+  background: #fff;
+  border-radius: 8px;
+  line-height: 0;
+}
+
+.qr-logo > img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+/* Timer rotated to read vertically, matching the label text above it. */
+.qr-timer {
+  writing-mode: vertical-rl;
+  padding: 15px 7px;
+  background: #eef1f2;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a4f52;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }

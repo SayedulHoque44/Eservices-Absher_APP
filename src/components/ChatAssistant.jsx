@@ -3,8 +3,10 @@ import './ChatAssistant.css'
 import { CloseIcon, SendIcon, ChatSparkleIcon } from './Icons.jsx'
 
 // Simulated AI assistant: canned welcome, tappable preset Q&A, and a fallback reply.
-export default function ChatAssistant({ open, t, onClose }) {
-  const [messages, setMessages] = useState([{ from: 'bot', text: t.welcome }])
+export default function ChatAssistant({ open, t, userName, onClose }) {
+  const firstName = (userName || '').trim().split(/\s+/)[0] || ''
+  const welcome = t.welcome.replace('{name}', firstName)
+  const [messages, setMessages] = useState([{ from: 'bot', text: welcome }])
   const [typing, setTyping] = useState(false)
   const [draft, setDraft] = useState('')
   const scrollRef = useRef(null)

@@ -25,6 +25,28 @@ import {
   ResidentIdPage,
   EmptyPage,
 } from './components/ProfilePages.jsx'
+import { resolvePhoto, resolveCard } from './userData.js'
+
+// Logged-in session kept in localStorage so the user stays signed in until they
+// explicitly log out (persists across app restarts).
+const SESSION_KEY = 'absar_session'
+const loadSession = () => {
+  try {
+    const s = JSON.parse(localStorage.getItem(SESSION_KEY) || 'null')
+    if (s && s.loggedIn && s.user) return s
+  } catch {
+    /* ignore */
+  }
+  return null
+}
+// Empty-state sections (Visa / Driving License / Labor / Travel) the API does
+// not carry — these are genuine "you have none" states, not placeholder data.
+const EMPTY_SECTIONS = {
+  visa: brand.user.visa,
+  drivingLicense: brand.user.drivingLicense,
+  labor: brand.user.labor,
+  travel: brand.user.travel,
+}
 
 const brandFiles = import.meta.glob('../brand/*.{svg,png,jpg,jpeg,webp}', {
   eager: true,
@@ -44,7 +66,10 @@ export default function App() {
   const [nafathOpen, setNafathOpen] = useState(false)
   const [otpOpen, setOtpOpen] = useState(false)
   const [loginKey, setLoginKey] = useState(0)
-  const [loggedIn, setLoggedIn] = useState(false)
+  // Restore a saved session on first render so a returning user lands logged in.
+  const saved = loadSession()
+  const [loggedIn, setLoggedIn] = useState(!!saved)
+  const [user, setUser] = useState(saved ? saved.user : null)
   const [previewOpen, setPreviewOpen] = useState(false)
   const [logoutConfirm, setLogoutConfirm] = useState(false)
   const [assistantOpen, setAssistantOpen] = useState(false)
@@ -66,12 +91,44 @@ export default function App() {
     setTab(key)
   }
 
+  // Real user data from the API, with the empty-state sections filled in and
+  // safe defaults so a missing section never crashes a profile page.
+  const fullUser = user
+    ? {
+        personal: { sections: [] },
+        passport: { rows: [] },
+        residentId: { rows: [] },
+        ...EMPTY_SECTIONS,
+        ...user,
+      }
+    : null
+  const userPhoto = resolvePhoto(user?.photo)
+  const docCard = resolveCard(user?.absher_card)
+
+  // Called after the OTP is verified: mark logged in and persist the session.
+  const completeLogin = () => {
+    setOtpOpen(false)
+    setLoginOpen(false)
+    setLoggedIn(true)
+    try {
+      localStorage.setItem(SESSION_KEY, JSON.stringify({ loggedIn: true, user }))
+    } catch {
+      /* ignore */
+    }
+  }
+
   const logout = () => {
     setLogoutConfirm(false)
     setAccountOpen(false)
     setStack([])
     setTab('home')
     setLoggedIn(false)
+    setUser(null)
+    try {
+      localStorage.removeItem(SESSION_KEY)
+    } catch {
+      /* ignore */
+    }
     setLoginKey((k) => k + 1)
     setLoginOpen(true)
   }
@@ -128,28 +185,29 @@ export default function App() {
         logo={logo}
         badge={badge}
         onBack={() => setLoginOpen(false)}
-        onSubmit={() => setOtpOpen(true)}
+        onSuccess={(u) => {
+          setUser(u)
+          setOtpOpen(true)
+        }}
       />
 
       <OtpPage
         open={otpOpen}
         t={text.otp}
         onBack={() => setOtpOpen(false)}
-        onSuccess={() => {
-          setOtpOpen(false)
-          setLoginOpen(false)
-          setLoggedIn(true)
-        }}
+        onSuccess={completeLogin}
       />
 
       <NafathPage open={nafathOpen} t={text.nafathPage} onClose={() => setNafathOpen(false)} />
 
-      {loggedIn && (
+      {loggedIn && fullUser && (
         <NavContext.Provider value={{ onSelect: selectTab }}>
           {tab === 'home' && (
             <HomeLoggedIn
               text={text.home}
-              user={brand.user}
+              user={fullUser}
+              photo={userPhoto}
+              card={docCard}
               quickAccess={brand.quickAccess}
               onSettings={() => setAccountOpen(true)}
               onProfile={() => go('profile')}
@@ -211,6 +269,7 @@ export default function App() {
           <DigitalDocuments
             {...pageProps('documents')}
             text={text.documents}
+            card={docCard}
             navLabels={text.home.nav}
             onBack={back}
             onPreviewCard={() => setPreviewOpen(true)}
@@ -218,7 +277,8 @@ export default function App() {
           <ProfilePage
             {...pageProps('profile')}
             labels={text.profile}
-            user={brand.user}
+            user={fullUser}
+            photo={userPhoto}
             navLabels={text.home.nav}
             onBack={back}
             go={go}
@@ -226,62 +286,65 @@ export default function App() {
           <PersonalDetailsPage
             {...pageProps('personal')}
             labels={text.profile}
-            data={brand.user.personal}
+            data={fullUser.personal}
+            photo={userPhoto}
             navLabels={text.home.nav}
             onBack={back}
           />
           <PassportPage
             {...pageProps('passport')}
             labels={text.profile}
-            data={brand.user.passport}
+            data={fullUser.passport}
             navLabels={text.home.nav}
             onBack={back}
           />
           <ResidentIdPage
             {...pageProps('residentId')}
             labels={text.profile}
-            data={brand.user.residentId}
+            data={fullUser.residentId}
             navLabels={text.home.nav}
             onBack={back}
           />
           <EmptyPage
             {...pageProps('visa')}
-            data={brand.user.visa}
+            data={fullUser.visa}
             navLabels={text.home.nav}
             onBack={back}
           />
           <EmptyPage
             {...pageProps('drivingLicense')}
-            data={brand.user.drivingLicense}
+            data={fullUser.drivingLicense}
             navLabels={text.home.nav}
             onBack={back}
           />
           <EmptyPage
             {...pageProps('labor')}
-            data={brand.user.labor}
+            data={fullUser.labor}
             navLabels={text.home.nav}
             onBack={back}
           />
           <EmptyPage
             {...pageProps('travel')}
-            data={brand.user.travel}
+            data={fullUser.travel}
             navLabels={text.home.nav}
             onBack={back}
           />
           <AccountSettings
             open={accountOpen}
             text={text.accountSettings}
-            user={brand.user}
+            user={fullUser}
+            photo={userPhoto}
             prefs={prefs}
             onChange={setPrefs}
             onClose={() => setAccountOpen(false)}
             onLogout={() => setLogoutConfirm(true)}
           />
-          <CardPreview open={previewOpen} onClose={() => setPreviewOpen(false)} />
+          <CardPreview open={previewOpen} card={docCard} onClose={() => setPreviewOpen(false)} />
 
           <ChatAssistant
             open={assistantOpen}
             t={text.assistant}
+            userName={fullUser.name}
             onClose={() => setAssistantOpen(false)}
           />
 

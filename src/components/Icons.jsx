@@ -1,4 +1,5 @@
 import weaponImgUrl from '../assets/weapon-icon.png'
+import passportImgUrl from '../assets/passport.png'
 
 // Faint outlined logo strokes used as the header background pattern.
 export function LogoPattern({ className }) {
@@ -230,21 +231,17 @@ export const ChevronIcon = (p) => (
   </Line>
 )
 
-export const PassportIcon = (p) => (
-  <Line {...p}>
-    <rect x="5" y="2.5" width="14" height="19" rx="2.4" />
-    <circle cx="12" cy="10" r="3.2" />
-    <path d="M12 6.8c1.4 1 1.4 5.4 0 6.4M12 6.8c-1.4 1-1.4 5.4 0 6.4M9 10h6" />
-    <path d="M9.5 18h5" />
-  </Line>
+export const PassportIcon = ({ size = 24, className }) => (
+  <img src={passportImgUrl} alt="" className={className} style={{ height: size, width: 'auto' }} />
 )
 
+// Resident ID card: photo square + two lines, with a longer line beneath.
 export const IdCardIcon = (p) => (
   <Line {...p}>
     <rect x="2.5" y="5" width="19" height="14" rx="2.4" />
-    <circle cx="8" cy="11" r="2" />
-    <path d="M5 16a3 3 0 0 1 6 0" />
-    <path d="M14.5 9.5h4M14.5 12.5h4M14.5 15h2.5" />
+    <rect x="5.3" y="8.2" width="5" height="4.8" rx="0.9" />
+    <path d="M12.6 9.5h6M12.6 11.8h6" />
+    <path d="M5.3 15.9h13.4" />
   </Line>
 )
 

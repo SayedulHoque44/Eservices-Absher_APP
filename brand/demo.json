@@ -10,7 +10,7 @@
         {
           "title": "Personal Details",
           "rows": [
-            { "label": "Name", "value": "MD MERAJ UDDIN" },
+            { "label": "Name", "value": "MD MERAJ UDDIN" },//same as name
             { "label": "Nationality", "value": "Bangladesh" },
             { "label": "Birth City", "value": "-" },
             { "label": "Birth Country/Region", "value": "Bangladesh" },

@@ -1,5 +1,4 @@
 ﻿import './ProfilePage.css'
-import { userPhoto as profilePhoto } from '../userData.js'
 import travelBanner from '../assets/travel-banner.png'
 import SubPage, { DetailCard, DetailRow, EmptyState } from './SubPage.jsx'
 import CopyToast, { useCopyToast, copyText } from './CopyToast.jsx'
@@ -19,8 +18,25 @@ import {
 
 const SECTION_ICONS = { person: PersonIcon, crescent: CrescentIcon, hajj: HajjIcon }
 
+// The API sends personal sections without icons, so fall back by section title.
+const TITLE_ICONS = {
+  'Personal Details': 'photo',
+  'Sponsor Details': 'person',
+  'Health Insurance': 'crescent',
+}
+
+// Static section appended after the user's personal details (not from the API).
+const HAJJ_SECTION = {
+  title: 'Hajj Details',
+  icon: 'hajj',
+  rows: [
+    { label: 'Hajj Status', value: 'Eligible for Hajj', badge: true },
+    { label: 'Last Hajj Year', value: '-' },
+  ],
+}
+
 /* ---------------- My Profile ---------------- */
-export function ProfilePage({ open, zIndex, labels, user, navLabels, onBack, go }) {
+export function ProfilePage({ open, zIndex, labels, user, photo, navLabels, onBack, go }) {
   const toast = useCopyToast()
   return (
     <SubPage
@@ -32,7 +48,7 @@ export function ProfilePage({ open, zIndex, labels, user, navLabels, onBack, go 
       navLabels={navLabels}
     >
       <div className="profile-body">
-        <img src={profilePhoto} alt="" className="profile-photo" />
+        <img src={photo} alt="" className="profile-photo" />
         <div className="profile-card">
           <strong className="profile-name">{user.name}</strong>
           <button type="button" className="profile-id" onClick={() => toast.show(user.id)}>
@@ -84,28 +100,33 @@ export function ProfilePage({ open, zIndex, labels, user, navLabels, onBack, go 
 }
 
 /* ---------------- My Personal Details (collapsible shell) ---------------- */
-export function PersonalDetailsPage({ open, zIndex, labels, data, navLabels, onBack }) {
+export function PersonalDetailsPage({ open, zIndex, labels, data, photo, navLabels, onBack }) {
   const toast = useCopyToast()
   return (
     <SubPage open={open} zIndex={zIndex} title={labels.personalDetails} onBack={onBack} navLabels={navLabels}>
-      {data.sections.map((section) => (
+      {[...(data.sections ?? []), HAJJ_SECTION].map((section, i) => {
+        const iconKey = section.icon ?? TITLE_ICONS[section.title]
+        return (
         <DetailCard
           key={section.title}
           title={section.title}
           collapsible
-          defaultOpen={false}
-          icon={SECTION_ICONS[section.icon]}
+          defaultOpen={i === 0}
+          icon={SECTION_ICONS[iconKey]}
           iconNode={
-            section.icon === 'photo' ? (
-              <img src={profilePhoto} alt="" className="detail-card-photo" />
+            iconKey === 'photo' ? (
+              <img src={photo} alt="" className="detail-card-photo" />
             ) : undefined
           }
         >
-          {section.rows.map((r) => (
-            <DetailRow key={r.label} {...r} onCopy={() => toast.show(r.value)} />
-          ))}
+          {section.rows
+            .filter((r) => r.label !== 'Nationality')
+            .map((r) => (
+              <DetailRow key={r.label} {...r} onCopy={() => toast.show(r.value)} />
+            ))}
         </DetailCard>
-      ))}
+        )
+      })}
       <CopyToast visible={toast.visible} />
     </SubPage>
   )

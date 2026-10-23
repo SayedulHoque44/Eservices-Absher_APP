@@ -16,7 +16,7 @@ function formatNow() {
   return `${weekday} ${day} ${month} ${d.getFullYear()} ${hh}:${mm} ${ampm}`
 }
 
-export default function DigitalDocuments({ open, zIndex, text, navLabels, onBack, onPreviewCard }) {
+export default function DigitalDocuments({ open, zIndex, text, card, navLabels, onBack, onPreviewCard }) {
   return (
     <div
       className={`docs${open ? ' is-open' : ''}`}
@@ -41,7 +41,7 @@ export default function DigitalDocuments({ open, zIndex, text, navLabels, onBack
         <h2 className="docs-doc-title">{text.residentId}</h2>
 
         <button type="button" className="docs-card id-card" onClick={onPreviewCard}>
-          <img src={documentCard} alt="" />
+          <img src={card || documentCard} alt="" />
         </button>
       </div>
     </div>

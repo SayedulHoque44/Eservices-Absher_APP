@@ -1,6 +1,5 @@
 ﻿import './HomeLoggedIn.css'
 import brand from '../../brand/brand.config.json'
-import { userPhoto as profilePhoto } from '../userData.js'
 import documentCard from '../assets/document-card.png'
 import { SearchIcon, GearIcon, BellIcon, ChatIcon, ChatSparkleIcon, QUICK_ICONS } from './Icons.jsx'
 
@@ -16,6 +15,8 @@ const badge = brandFiles[`../../brand/${brand.badge}`]
 export default function HomeLoggedIn({
   text,
   user,
+  photo,
+  card,
   quickAccess,
   onSettings,
   onProfile,
@@ -48,7 +49,7 @@ export default function HomeLoggedIn({
 
         <div className="home-body">
           <button type="button" className="user-card" onClick={onProfile}>
-            <img src={profilePhoto} alt="" className="user-photo" />
+            <img src={photo} alt="" className="user-photo" />
             <div className="user-info">
               <strong>{user.name}</strong>
               <span>
@@ -83,7 +84,7 @@ export default function HomeLoggedIn({
               </button>
             </div>
             <button type="button" className="document-card id-card" onClick={onPreviewCard}>
-              <img src={documentCard} alt="" />
+              <img src={card || documentCard} alt="" />
             </button>
           </section>
 

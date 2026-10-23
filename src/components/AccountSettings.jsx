@@ -1,6 +1,5 @@
 ﻿import { useState } from 'react'
 import './AccountSettings.css'
-import { userPhoto as profilePhoto } from '../userData.js'
 import { CloseIcon } from './Icons.jsx'
 
 function Toggle({ on, onChange }) {
@@ -28,7 +27,7 @@ function Radio({ label, lang, checked, onChange }) {
 }
 
 // Logged-in Settings page. Items are selectable but inert; only Log Out acts.
-export default function AccountSettings({ open, text, user, prefs, onChange, onClose, onLogout }) {
+export default function AccountSettings({ open, text, user, photo, prefs, onChange, onClose, onLogout }) {
   const [biometrics, setBiometrics] = useState(true)
   const [blur, setBlur] = useState(false)
 
@@ -45,7 +44,7 @@ export default function AccountSettings({ open, text, user, prefs, onChange, onC
         <p className="acc-section">{text.accountDetails}</p>
         <div className="acc-card">
           <div className="acc-user">
-            <img src={profilePhoto} alt="" className="acc-user-photo" />
+            <img src={photo} alt="" className="acc-user-photo" />
             <div>
               <strong>{user.name}</strong>
               <span>
