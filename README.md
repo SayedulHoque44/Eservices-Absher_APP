@@ -21,7 +21,6 @@ If you are developing a production application, we recommend using TypeScript wi
 - always refeatch on when reopen the app, 
 - if server response with error with that api it should logout and redirect to login page 
 
-## before build
-- app name to Absher
-- add official logo (replce)
+## To see changes in emulator
+- npm run dev
 - adb install -r android\app\build\outputs\apk\debug\app-debug.apk
